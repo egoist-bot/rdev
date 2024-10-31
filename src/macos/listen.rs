@@ -43,7 +43,7 @@ where
             CGEventTapLocation::HID, // HID, Session, AnnotatedSession,
             kCGHeadInsertEventTap,
             CGEventTapOption::ListenOnly,
-            kCGEventMaskForAllEvents,
+            (1 << CGEventType::MouseMoved as u64), // Only listen to mouse move events
             raw_callback,
             nil,
         );
